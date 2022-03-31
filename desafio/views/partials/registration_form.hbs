@@ -1,0 +1,33 @@
+{{!-- registration_form.hbs --}}
+
+<div class="container bg-light mb-3">
+    <h3 class="fs-2 text-primary my-4 py-4"> Registración de usuarios</h3>
+
+    <form action="/api/registration" method="post">
+        <div class="mb-3">
+            <label for="username" class="form-label">Ingrese Nombre de usuario</label>
+            <input type="text" class="form-control" name="username" id="username" aria-describedby="usernameHelp">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Ingrese contraseña</label>
+            <input type="password" class="form-control" name="password" id="password" aria-describedby="passwordHelp">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Ingrese su email</label>
+            <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="firstname" class="form-label">Ingrese su Nombre</label>
+            <input type="text" class="form-control" name="firstname" id="firstname" aria-describedby="firstnameHelp">
+        </div>
+        <div class="mb-3">
+            <label for="lastname" class="form-label">Ingrese su Apellido</label>
+            <input type="text" class="form-control" name="lastname" id="lastname" aria-describedby="lastnameHelp">
+        </div>
+
+         <div class="d-grid gap-2 d-md-block">
+            <button id="btnFormLogin_submit" type="submit" class="btn btn-primary mx-3">Enviar</button>
+            <a class="btn btn-primary" href="/api/login" role="button">Volver</a>
+        </div>
+    </form>
+</div>

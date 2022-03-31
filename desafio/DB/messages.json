@@ -1,0 +1,184 @@
+[
+  {
+    "author": {
+      "id": "charlygarcia@gmail.com",
+      "name": "Charly",
+      "surname": "Garcia",
+      "age": "70",
+      "alias": "Charly",
+      "avatar": "http://img.jpg"
+    },
+    "text": "Hola Mundo!!!",
+    "date": "26/1/2022 08:33:30",
+    "id": 1
+  },
+  {
+    "author": {
+      "id": "ana@hotmail.com.ar",
+      "name": "Ana",
+      "surname": "Booror",
+      "age": "45",
+      "alias": "Anuki",
+      "avatar": "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/girl_avatar_child_kid-128.png"
+    },
+    "text": "Como van?",
+    "date": "17/3/2022 15:51:01",
+    "id": 2
+  },
+  {
+    "author": {
+      "id": "ana@hotmail.com.ar",
+      "name": "Ana",
+      "surname": "Booror",
+      "age": "45",
+      "alias": "Anuki",
+      "avatar": "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/girl_avatar_child_kid-128.png"
+    },
+    "text": "Hola Pedro, cuanto tiempo!!!!",
+    "date": "17/3/2022 15:52:47",
+    "id": 3
+  },
+  {
+    "author": {
+      "id": "echevalier.dev@gmail.com",
+      "name": "Esteban",
+      "surname": "Chevalier",
+      "age": "56",
+      "alias": "Chevacx",
+      "avatar": "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/girl_avatar_child_kid-128.png"
+    },
+    "text": "Je je je",
+    "date": "17/3/2022 16:01:48",
+    "id": 4
+  },
+  {
+    "author": {
+      "id": "ana@hotmail.com.ar",
+      "name": "Ana",
+      "surname": "Booror",
+      "age": "45",
+      "alias": "Anuki",
+      "avatar": "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/girl_avatar_child_kid-128.png"
+    },
+    "text": "Hoy comemos algo jejeje",
+    "date": "17/3/2022 15:51:01",
+    "id": 5
+  },
+  {
+    "author": {
+      "id": "ana@hotmail.com.ar",
+      "name": "Ana",
+      "surname": "Booror",
+      "age": "45",
+      "alias": "Anuki",
+      "avatar": "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/girl_avatar_child_kid-128.png"
+    },
+    "text": "Saben a que hora inicia la clase?",
+    "date": "17/3/2022 15:59:47",
+    "id": 6
+  },
+  {
+    "author": {
+      "id": "ana@hotmail.com.ar",
+      "name": "Ana",
+      "surname": "Booror",
+      "age": "45",
+      "alias": "Anuki",
+      "avatar": "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/girl_avatar_child_kid-128.png"
+    },
+    "text": "Xq a esa hora tengo que ir al dentista y no se si voy a llegar.",
+    "date": "17/3/2022 15:59:49",
+    "id": 7
+  },
+  {
+    "author": {
+      "id": "echevalier.dev@gmail.com",
+      "name": "Esteban",
+      "surname": "Chevalier",
+      "age": "56",
+      "alias": "Chevacx",
+      "avatar": "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/girl_avatar_child_kid-128.png"
+    },
+    "text": "No te preocupes, se supendio la clase.",
+    "date": "17/3/2022 18:01:48",
+    "id": 8
+  },
+  {
+    "author": {
+      "id": "ana@hotmail.com.ar",
+      "name": "Ana",
+      "surname": "Booror",
+      "age": "45",
+      "alias": "Anuki",
+      "avatar": "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/girl_avatar_child_kid-128.png"
+    },
+    "text": "Creo que esta listo!!!!",
+    "date": "17/3/2022 19:46:42",
+    "id": 9
+  },
+  {
+    "author": {
+      "id": "ana@hotmail.com.ar",
+      "name": "Ana",
+      "surname": "Booror",
+      "age": "45",
+      "alias": "Anuki",
+      "avatar": "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/girl_avatar_child_kid-128.png"
+    },
+    "text": "que me decis?",
+    "date": "17/3/2022 19:48:13",
+    "id": 10
+  },
+  {
+    "author": {
+      "id": "ana@hotmail.com.ar",
+      "name": "Ana",
+      "surname": "Booror",
+      "age": "45",
+      "alias": "Anuki",
+      "avatar": "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/girl_avatar_child_kid-128.png"
+    },
+    "text": "Ahora si va ok!!!",
+    "date": "17/3/2022 19:51:17",
+    "id": 11
+  },
+  {
+    "author": {
+      "id": "echevalier.dev@gmail.com",
+      "name": "Esteban",
+      "surname": "Chevalier",
+      "age": "56",
+      "alias": "Chevacx",
+      "avatar": "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/girl_avatar_child_kid-128.png"
+    },
+    "text": "Excelente trabajo!!!",
+    "date": "17/3/2022 19:52:21",
+    "id": 12
+  },
+  {
+    "author": {
+      "id": "ana@hotmail.com.ar",
+      "name": "Ana",
+      "surname": "Booror",
+      "age": "34",
+      "alias": "Anuki",
+      "avatar": "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/girl_avatar_child_kid-128.png"
+    },
+    "text": "Buenas, como va esa semana?",
+    "date": "23/3/2022 10:58:29",
+    "id": 13
+  },
+  {
+    "author": {
+      "id": "ana@hotmail.com.ar",
+      "name": "Ana",
+      "surname": "Booror",
+      "age": "34",
+      "alias": "Anuki",
+      "avatar": "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/girl_avatar_child_kid-128.png"
+    },
+    "text": "Hola de nuevo",
+    "date": "27/3/2022 12:59:47",
+    "id": 14
+  }
+]

@@ -1,0 +1,44 @@
+{{!-- form.hbs --}}
+
+<div class="container bg-light mb-3">
+    <h3 class="fs-2 text-primary my-4 py-4"> Login de usuario</h3>
+
+    {{#if retry }}
+    <p class="p-3 my-2 bg-warning text-dark">Usuario o contraseña incorrecto.</p>
+    {{/if}}
+
+    <form action="/api/login" method="post">
+        <div class="mb-3">
+            <label for="username" class="form-label">Ingrese su nombre</label>
+            <input type="text" class="form-control" name="username" id="username" aria-describedby="usernameHelp">
+        </div>
+
+        <div class="mb-3">
+            <label for="password" class="form-label">Ingrese su contraseña</label>
+            <input type="password" class="form-control" name="password" id="password" aria-describedby="passwordHelp">
+        </div>
+
+        <div class="d-grid gap-2 d-md-block">
+            <button id="btnFormLogin_submit" type="submit" class="btn btn-primary mb-2">Enviar</button>
+            <p class="fs-5 mb-2">¿Aun no tenes una cuenta?</p>
+            <a class="btn btn-primary" href="/api/registration" role="button">Registrarse</a>
+            <p class="fs-5 mb-2">¿Mejor ingresar con Facebook?</p>
+
+            <a class="btn btn-primary justify-content-center" href="/auth/facebook" role="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-facebook" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                </svg>
+                <span class="px-2">Facebook</span>
+            </a>
+
+
+        </div>
+
+
+    </form>
+
+
+
+</div>

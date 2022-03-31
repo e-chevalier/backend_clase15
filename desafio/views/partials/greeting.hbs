@@ -1,0 +1,15 @@
+{{!-- greeting.hbs --}}
+
+<div class="container bg-primary bg-gradient mb-3 my-4 py-4 bg-">
+    <div class="d-flex justify-content-between align-items-center">
+        <img src="{{photo}}" class="img-fluid rounded-start" alt="" srcset="">  
+        <span class="fs-1 text-light"> {{username}}</span>
+        <a class="btn btn-outline-warning m-4" href="/api/logout" role="button">Logout</a>
+    </div>
+     <div class="col-12">
+        <p class="fs-5 text-light"> Nombre: {{firstname}}</p>
+        <p class="fs-5 text-light"> Apellido: {{lastname}}</p>
+        <p class="fs-5 text-light"> Email: {{email}}</p>
+        <p class="fs-5 text-light"> Visita #{{counter}}</p>
+    </div>
+</div>
