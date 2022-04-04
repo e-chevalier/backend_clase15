@@ -15,10 +15,13 @@ import passport from 'passport';
 import { Strategy as FacebookStrategy } from 'passport-facebook';
 import { Strategy as LocalStrategy } from 'passport-local';
 import * as User from './models/users.js'
-import https from 'https'
-import fs from 'fs'
 import bCrypt from 'bcrypt'
+import cluster from 'cluster'
 import faker from 'faker'
+import fs from 'fs'
+import https from 'https'
+import { Server as HttpServer } from 'http'
+import os from 'os'
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
 import { productsMemory, productsContainer, messagesMemory, messagesContainer } from './daos/index.js'
@@ -41,8 +44,7 @@ const credentials = {
     cert: fs.readFileSync('cert.pem')
 };
 
-const httpsServer = https.createServer(credentials, app);
-const io = new IOServer(httpsServer)
+
 
 
 // Middlewares
@@ -67,6 +69,12 @@ app.engine('.hbs', engine({
 app.set('views', './views'); // especifica el directorio de vistas
 app.set('view engine', '.hbs'); // registra el motor de plantillas
 
+
+const httpsServer = https.createServer(credentials, app);
+const io = new IOServer(httpsServer)
+
+// const httpServer = new HttpServer(app)
+// const io = new IOServer(httpServer)
 
 
 // CONFIG SESION WITH MONGO STORE
@@ -194,7 +202,6 @@ passport.use('signup', new LocalStrategy(
                 firstname: req.body.firstname,
                 lastname: req.body.lastname,
                 photo: faker.image.imageUrl(50, 50, 'people', false, true)
-                //photo: "https://cdn3.iconfinder.com/data/icons/fruits-52/150/icon_fruit_morango-128.png"
             }
 
             User.users.create(newUser, (err, userWithId) => {
@@ -223,31 +230,6 @@ const isValidPassword = (user, password) => {
 
 
 serverRoutes(app, passport)
-
-const argv = yargs(hideBin(process.argv))
-    .default({
-        puerto: 8080
-    })
-    .alias({
-        p: 'puerto'
-    })
-    .argv
-
-
-const PORT = argv.puerto
-
-const server = httpsServer.listen(PORT, 'localhost', (err) => {
-    if (err) {
-        console.log("Error while starting server")
-    } else {
-        console.log(`Servidor https escuchando en el puerto ${server.address().port}
-                 Open link to https://localhost:${server.address().port}`)
-    }
-})
-
-server.on('error', error => console.log(`Error en servidor ${error}`))
-
-
 
 
 /**
@@ -323,6 +305,81 @@ io.on('connection', (socket) => {
     })
 
 })
+
+
+
+const numCPUs = os.cpus().length
+
+const argv = yargs(hideBin(process.argv))
+    .default({
+        modo: 'FORK',
+        puerto: 8080
+    })
+    .alias({
+        m: 'modo',
+        p: 'puerto'
+    })
+    .argv
+
+const PORT = argv.puerto
+
+if (argv.modo.toUpperCase() == 'CLUSTER') {
+
+    if (cluster.isPrimary) {
+        console.log(`Master Cluster PID ${process.pid} is running.`)
+
+        // FORK WORKER
+        for (let i = 0; i < numCPUs; i++) {
+            cluster.fork()
+        }
+
+        cluster.on('exit', (worker, code, signal) => {
+            console.log(`worker ${worker.process.pid} died.`)
+            cluster.fork()
+        })
+
+    } else {
+
+        const server = httpsServer.listen(PORT, (err) => {
+            if (err) {
+                console.log("Error while starting server")
+            } else {
+                console.log(
+                    `
+                    ------------------------------------------------------------
+                    WORKER ${server.address().port}  Process Pid: ${process.pid}
+                    Open link to https://localhost:${server.address().port}     
+                    -------------------------------------------------------------
+                    `
+                )
+            }
+        })
+
+        server.on('error', error => console.log(`Error en servidorProcess Pid: ${process.pid}: ${error}`))
+
+    }
+
+
+} else {
+
+    const server = httpsServer.listen(PORT, 'localhost', (err) => {
+        if (err) {
+            console.log("Error while starting server")
+        } else {
+            console.log(
+                `
+                ------------------------------------------------------------
+                Servidor http escuchando en el puerto ${server.address().port}
+                Open link to https://localhost:${server.address().port}      
+                -------------------------------------------------------------
+                `
+            )
+        }
+    })
+
+    server.on('error', error => console.log(`Error en servidor ${error}`))
+
+}
 
 
 

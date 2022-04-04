@@ -1,3 +1,5 @@
+import os from 'os'
+
 class Info {
 
     async getInfo() {
@@ -11,6 +13,10 @@ class Info {
                 {
                     key: 'Sistema Operativo',
                     value: process.platform
+                },
+                {
+                    key: 'Cantidad de Procesadores',
+                    value: os.cpus().length
                 },
                 {
                     key: 'Versión de node.js',
