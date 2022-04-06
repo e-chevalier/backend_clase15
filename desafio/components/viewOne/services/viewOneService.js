@@ -13,7 +13,7 @@ class ViewOne {
 
             } 
                         
-            console.log(req.user)
+            //console.log(req.user)
             return { status: "OK", data: {...req.user, counter: req.session.counter} }
         } catch (error) {
             console.log(error);

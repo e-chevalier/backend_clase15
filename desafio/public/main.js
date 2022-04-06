@@ -1,4 +1,9 @@
-const socket = io()
+const socket = io({ transports: ["websocket", "polling"] })
+
+socket.on("connect_error", () => {
+    // revert to classic upgrade
+    socket.io.opts.transports = ["polling", "websocket"];
+  });
 
 const btnForm_submit = document.getElementById('btnForm_submit')
 
