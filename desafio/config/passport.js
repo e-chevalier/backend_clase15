@@ -1,6 +1,7 @@
 import passport from 'passport'
 import { Strategy as FacebookStrategy } from 'passport-facebook'
 import { Strategy as LocalStrategy } from 'passport-local'
+import faker from 'faker'
 import { fb_config } from './facebook.js'
 import * as User from '../models/users.js'
 import bCrypt from 'bcrypt'
